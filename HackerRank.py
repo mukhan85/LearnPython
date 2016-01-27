@@ -1,4 +1,3 @@
-import sys
 
 file = open('hackerInput', 'r')
 
@@ -13,6 +12,10 @@ def solve(number):
     print(counter)
 
 t = int(file.readline())
+
+data = ' From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008 '
+pos = data.find('.')
+print(data.strip())
 
 for a0 in range(t):
     n = int(file.readline())
