@@ -4,6 +4,9 @@ from sklearn.datasets.samples_generator import make_regression
 from scipy import stats
 
 
+# to install nympy.
+# C:\BLKDeveloper\Learn\LearnPython\venv\Scripts\pip3.4.exe install "C:\Software\numpy\numpy-1.9.3+mkl-cp34-none-win_amd64.whl"
+
 def gradient_descent(alpha, x, y, ep=0.0001, max_iter=10000):
     converged = False
     iter = 0
