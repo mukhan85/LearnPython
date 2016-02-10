@@ -9,7 +9,7 @@ def bfs_visited(ugraph, start_node):
     :param start_node: starting point of the BFS.
     :return: nothing.
     """
-    visited = dict
+    visited = {}
 
     for each_key in ugraph.keys():
         visited[each_key] = False
@@ -22,12 +22,12 @@ def bfs_visited(ugraph, start_node):
     while True:
         try:
             next_vert = queue.pop()
-            for each_neighbour in ugraph.get(next_vert):
-                if not visited[each_neighbour]:
-                    visited[each_neighbour] = True
-                    queue.append(each_neighbour)
-                    visit_order.add(each_neighbour)
-
+            if next_vert in ugraph.keys():
+                for each_neighbour in ugraph.get(next_vert):
+                    if not visited[each_neighbour]:
+                        visited[each_neighbour] = True
+                        queue.append(each_neighbour)
+                        visit_order.add(each_neighbour)
         except IndexError:
             break
     return visit_order
@@ -48,7 +48,8 @@ def print_graph(digraph):
     for each_vert in digraph.keys():
         print(str(each_vert) + " -> " + str(digraph.get(each_vert)))
 
-
 print_graph(graph)
 
 print(bfs_visited(graph, 4))
+
+# def cc_visited(ugraph):
